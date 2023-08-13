@@ -1,14 +1,54 @@
 @charset "UTF-8";
 
 body{
-    background-color: white;
+    background-color: #dddddd;
     color: rgba(0, 0, 0, 1);
 
 }
+div#interface {
+    width: 900px;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto; /*sempre na ordem: cima, direita, baixo esquerda*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /*espaçamento lateral, vertical, espalhamento e cor*/
+    padding: 10px;/*margem interna, geralmente os px são organizados na mesma ordem q o margin, mas fazendo só um confg = pra todas*/
+}
+
 p {
     text-align:justify;
     text-indent: 50px;
 }
+
+header#cabecalho img#icone{
+    position: absolute;
+    left: 780px;
+    top: 70px;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid; /*literalmente linha de borda, grossura cor e tipo de line*/
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;/*.. volta uma pasta*/
+
+}
+
+header#cabecalho h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px;
+
+}
+
 
 /* Formatação de imagens com legendas */
 
