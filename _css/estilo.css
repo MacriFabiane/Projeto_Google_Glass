@@ -133,6 +133,19 @@ section#corpo{
     padding-right: 15px;
 }
 
+table#tabelaespec{
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaespec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    vertical-align: middle;
+}
+
 aside#lateral{ /*ASIDE->CONTEUDOS PERIFERICOS RELACIONADOS AO ARTIGO PRINCIPAL(SECTION)*/
     display: block;
     width: 350px;
