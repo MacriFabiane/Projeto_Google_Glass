@@ -45,7 +45,7 @@
                     </hgroup>
                 </header>
 
-       <form>
+       <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com">
         <fieldset id="usuario">
             <legend>Identificação do Usuário</legend>
             <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
@@ -60,21 +60,45 @@
                 <input type="radio" name="tSexo" id="cFem" /><label for="cFem">Feminino</label>
             </fildset>
 
-            <p> Data de Nascimento: <input type="date" name="tData" id="cData"/></p>
+            <p><label for="cData">Data de Nascimento: </label> <input type="date" name="tData" id="cData"/></p>
         </fieldset>
         <fieldset id="endereco">
             <legend>Endereço do Usuário</legend>
-                <p>Logradouro: <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rau, Av, Travessa" /></p>
-                <p>Número: <input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
-                <p>Estado: </p>
-                <p>Cidade:</p>
+                <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rau, Av, Travessa" /></p>
+                <p><label for="cNum">Número: </label> <input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
+                
+                <p><label for="cEst">Estado: </label><select name="tEst" id="cEst">
+                <optgroup label="Região Sudeste" >
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP" selected>São Paulo</option>
+                    value="MG">Minas Gerais</option>
+                </optgroup>
+                 
+                 <optgroup label="Região Sul" >
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+                </select></p>
+
+                <p><label for="cCid">Cidade: </label>
+                <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p>
+                <datalist id="cidades">
+                    <option value="Rio de Janeiro"></option>
+                    <option value="Nova Iguaçu"></option>
+                    <option value="Niterói"></option>
+                    <option value="Belford Roxo"></option>
+                </datalist>
             </fieldset>
 
             <fieldset id="mensagem">
             <legend>Mensagem do Usuário</legend>
-                Grau de Urgência:
-                Mensagem:
+                <p><label for="cUrg">Grau de Urgência: </label>
+                Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx</p>
+                <p><label for="cMsg"> Mensagem: </label>
+                <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem."></textarea></p>
             </fieldset>
+
             <fieldset id="pedido">
             <legends>Quero um Google Glass</legends>
                 Gostaria de adquirir um Google Glass quando disponível
