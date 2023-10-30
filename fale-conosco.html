@@ -6,10 +6,15 @@
         <title>Tudo sobre Google Glass</title>
        <link rel="stylesheet" href="_css\estilo.css"/>
        <link rel="stylesheet" href="_css/form.css"/>
-
-    </head>
-    <script language="javascript" src="_javascript/funcoes.js"></script>
-
+       <script language="javascript" src="_javascript/funcoes.js"></script>
+       <script>
+            function calc_total() {
+                var qtd = parseInt(document.getElementById('cQtd').value);
+                 tot = qtd * 1500;
+                document.getElementById('cTot').value = tot;
+            }
+       </script>
+    </head> 
     <body>
         <div id="interface">
             <header id="cabecalho">
@@ -45,7 +50,7 @@
                     </hgroup>
                 </header>
 
-       <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com">
+       <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
         <fieldset id="usuario">
             <legend>Identificação do Usuário</legend>
             <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
@@ -54,11 +59,11 @@
 
             <p><label for="cMail">E-mail: </label><input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="eu@email.com" /></p>
 
-            <fildset id="sexo">
+            <fieldset id="sexo">
                 <legend>Sexo:</legend>
                 <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label><br/>
                 <input type="radio" name="tSexo" id="cFem" /><label for="cFem">Feminino</label>
-            </fildset>
+            </fieldset>
 
             <p><label for="cData">Data de Nascimento: </label> <input type="date" name="tData" id="cData"/></p>
         </fieldset>
@@ -101,14 +106,21 @@
 
             <fieldset id="pedido">
             <legends>Quero um Google Glass</legends>
-                Gostaria de adquirir um Google Glass quando disponível
-                Cor:
-                Quantidade:
-                Preço Total: R$
+                <p><input type="checkbox" name="tPed" id="cPed" checked/> 
+                    <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                <p><label for="cCor">Cor:</label>
+                    <input type="color" name="tCor" id="cCor" value="#0000FF"/>
+                 </p>
+                <p><label for="cQtd">Quantidade:</label>
+                    <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+                </p>
+                <p><label for="cTot">Preço Total: R$</label>
+                <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/></p>
             </fieldset>
 
 
-            [BOTÃO ENVIAR]
+            
+            <input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
         </form>
 
 <footer id="rodape">
